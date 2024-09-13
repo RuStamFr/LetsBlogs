@@ -1,0 +1,43 @@
+@import "../../styles/colors";
+@import "../../styles/mixins";
+
+.header-top {
+  padding: 3.25rem 0 1.25rem;
+  border-bottom: 1px solid $border;
+
+  &-content {
+    @include flex(row, flex-start, space-between);
+    padding: 0 1rem;
+    .soc-icons-wrappper {
+      display: flex;
+      align-items: center;
+      .soc-icons-li {
+        margin-right: 0.75rem;
+        .soc-icons-link {
+          display: flex;
+          & svg {
+            fill: "#1A1A1A";
+            &:hover {
+              fill: $date;
+            }
+          }
+        }
+      }
+    }
+    .header-top-right-menu {
+      @include flex(row, center, center, auto);
+
+      .search-icon {
+        cursor: pointer;
+        margin-right: 0.7rem;
+        fill: $text;
+        &:hover {
+          fill: $date;
+        }
+      }
+      .burger-menu-wrapper {
+        cursor: pointer;
+      }
+    }
+  }
+}
