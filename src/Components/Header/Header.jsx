@@ -6,6 +6,20 @@ import { Link } from "react-router-dom";
 import Logo from "../Logo/Logo";
 import HamburgerIcon from "./hamburger.png";
 const Header = () => {
+  const navigation = [
+    {
+      name: "Home",
+      path: "/",
+    },
+    {
+      name: "SinglePost",
+      path: "/single-post/1",
+    },
+    {
+      name: "Category",
+      path: "/category/1",
+    },
+  ];
   return (
     <header>
       <Section className="header-top">
@@ -76,6 +90,15 @@ const Header = () => {
           </Wrapper>
         </div>
       </Section>
+      <nav className="header-nav">
+        {navigation.map((item) => {
+          return (
+            <Link className="header-nav-link" to={item.path} key={item.name}>
+              {item.name}
+            </Link>
+          );
+        })}
+      </nav>
     </header>
   );
 };
