@@ -1,0 +1,131 @@
+@import "../../styles/colors";
+@import "../../styles/mixins";
+.footer {
+  padding-bottom: 0.7rem;
+  background-color: $text;
+
+  &-top-content {
+    @include flex(row, flex-start, space-between);
+    padding: 3.2rem 0;
+
+    .subscribe-block {
+      width: 20%;
+      display: flex;
+      flex-direction: column;
+      .subscribe-text {
+        margin: 1rem 0;
+        color: $footerDate;
+        font-size: 0.75rem;
+        font-weight: 600;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+      }
+      .subscribe-input {
+        padding: 0.5rem 0.7rem;
+        height: 2rem;
+        text-align: center;
+        background: #fcfcfc;
+        border: 1px solid $border;
+        margin-bottom: 1rem;
+        &::placeholder {
+          font-family: "Lora";
+          font-style: italic;
+          font-weight: inherit;
+        }
+      }
+      .subscribe-btn {
+        padding: 0.4rem 1rem;
+        text-transform: uppercase;
+        font-size: 11px;
+        font-weight: 600;
+        line-height: 1.5;
+        letter-spacing: 2px;
+        background-color: $grey;
+        color: $white;
+        transition: all 0.3s ease;
+        &:hover {
+          background-color: $text;
+        }
+      }
+    }
+    .footer-recent-posts {
+      width: 20%;
+    }
+    .footer-popular-posts {
+      width: 25%;
+    }
+
+    .footer-posts-info {
+      & p {
+        margin: 1rem 0;
+        text-transform: uppercase;
+        color: $footerDate;
+        line-height: 1.7;
+        letter-spacing: 2px;
+        font-size: 0.75rem;
+        font-weight: 600;
+      }
+      .footer-posts-info-li {
+        margin-bottom: 0.65rem;
+        .footer-posts-info-link {
+          text-transform: uppercase;
+          letter-spacing: 1px;
+          color: $white;
+          font-family: "Lustria";
+          font-weight: 600;
+          font-size: 0.7rem;
+          line-height: 1.2em;
+          transition: all 0.3s ease;
+          margin-bottom: 0.35rem;
+          &:hover {
+            color: $date;
+          }
+        }
+        .footer-posts-info-date {
+          font-family: "Lustria";
+          font-style: italic;
+          color: $footerDate;
+          letter-spacing: 0;
+          opacity: 0.8;
+          font-size: 0.75rem;
+        }
+      }
+    }
+  }
+  .footer-bottom-wrapper {
+    @include flex(row, center, center);
+    max-width: 1425px;
+    border-top: 1px solid #444;
+    margin: 0 auto;
+    padding: 0 3.75rem;
+    .footer-bottom-content {
+      @include flex(row, center, space-between);
+      padding: 1.25rem 0;
+      .copyright {
+        color: $footerDate;
+        width: 50%;
+        font-size: 0.75rem;
+        font-weight: 400;
+      }
+      .footer-bottom-ul {
+        display: flex;
+        align-items: center;
+        .footer-bottom-li {
+          margin-right: 1.25rem;
+          &:last-child {
+            margin-right: 0;
+          }
+          &-link {
+            font-size: 11px;
+            font-weight: 400;
+            color: $white;
+            transition: all 0.3s ease;
+            &:hover {
+              color: $date;
+            }
+          }
+        }
+      }
+    }
+  }
+}

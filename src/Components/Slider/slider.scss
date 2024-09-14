@@ -1,0 +1,47 @@
+@import "../../styles/mixins";
+@import "../../styles/colors";
+
+.slider {
+  @include flex(row, center, center);
+  margin-bottom: 2.5rem;
+  height: 500px;
+  position: relative;
+  .swiper-wrapper {
+    overflow: visible;
+  }
+  &-image-holder {
+    width: 100%;
+    img {
+      width: 100%;
+    }
+  }
+}
+.slider-image-holder {
+  height: 500px;
+  & img {
+    height: 500px;
+  }
+}
+.slide-post {
+  position: absolute;
+  bottom: 15px;
+  color: $white;
+  width: 100%;
+  text-align: center;
+  z-index: 10000;
+  &-date {
+    font-family: "Lustria";
+    font-style: italic;
+    font-size: 0.8rem;
+  }
+  &-name {
+    font-family: "Lustria";
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+    font-weight: 600;
+  }
+}
+.swiper-button-next,
+.swiper-button-prev {
+  color: white;
+}
