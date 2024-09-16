@@ -7,9 +7,8 @@
 
   &-content {
     @include flex(row, flex-start, space-between);
-    padding: 0 1rem;
     .soc-icons-wrappper {
-      display: flex;
+      @include resp(display, none, flex);
       align-items: center;
       .soc-icons-li {
         margin-right: 0.75rem;
@@ -49,6 +48,8 @@
 }
 .header-nav {
   @include flex(row, center, center);
+  @include resp(display, none, none, flex);
+
   &-link {
     padding: 1rem;
     font-size: 0.75rem;
@@ -62,5 +63,10 @@
     &:active {
       color: $date;
     }
+  }
+}
+@media (min-width: 1024px) {
+  .mobile-menu {
+    display: none;
   }
 }

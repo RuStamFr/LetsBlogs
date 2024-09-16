@@ -1,6 +1,13 @@
-.black-logo {
-  width: 15.75rem;
+@import "../../styles/mixins";
+
+.logo-link {
+  display: flex;
+  @include resp(justify-content, flex-start, center);
+  .black-logo {
+    @include resp(width, 40%, 40%, 100%);
+  }
 }
+
 .white-logo {
   width: 9.5rem;
 }

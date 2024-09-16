@@ -7,7 +7,6 @@ import "swiper/css/autoplay";
 import "./slider.scss";
 
 const Slider = ({ items }) => {
-  console.log("items", items);
   return (
     <>
       <Swiper

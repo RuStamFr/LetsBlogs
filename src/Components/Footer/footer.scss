@@ -7,9 +7,9 @@
   &-top-content {
     @include flex(row, flex-start, space-between);
     padding: 3.2rem 0;
-
+    @include resp(flex-direction, column, column, row);
     .subscribe-block {
-      width: 20%;
+      @include resp(width, 100%, 100%, 20%);
       display: flex;
       flex-direction: column;
       .subscribe-text {
@@ -49,10 +49,10 @@
       }
     }
     .footer-recent-posts {
-      width: 20%;
+      @include resp(width, 100%, 100%, 20%);
     }
     .footer-popular-posts {
-      width: 25%;
+      @include resp(width, 100%, 100%, 25%);
     }
 
     .footer-posts-info {
@@ -94,16 +94,20 @@
   }
   .footer-bottom-wrapper {
     @include flex(row, center, center);
+    @include resp(padding, 0 1.5rem, 0 1.5rem, 0 3.75rem);
+
     max-width: 1425px;
     border-top: 1px solid #444;
     margin: 0 auto;
-    padding: 0 3.75rem;
     .footer-bottom-content {
       @include flex(row, center, space-between);
       padding: 1.25rem 0;
+      @include resp(flex-wrap, wrap, wrap, wrap, nowrap);
       .copyright {
+        @include resp(width, 100%, 100%, 50%);
+        @include resp(margin-bottom, 1rem, 1rem, 0);
+
         color: $footerDate;
-        width: 50%;
         font-size: 0.75rem;
         font-weight: 400;
       }

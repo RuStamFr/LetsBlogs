@@ -17,9 +17,9 @@
   }
 }
 .slider-image-holder {
-  height: 500px;
   & img {
     height: 500px;
+    object-fit: cover;
   }
 }
 .slide-post {

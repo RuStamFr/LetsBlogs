@@ -7,7 +7,7 @@ import Image from "../Image/Image";
 const Logo = ({ color = "black" }) => {
   const currentImage = color === "white" ? LogoWhite : LogoBlack;
   return (
-    <Link to={"/"}>
+    <Link to={"/"} className="logo-link">
       <Image
         className={`logo ${color}-logo`}
         src={currentImage}
