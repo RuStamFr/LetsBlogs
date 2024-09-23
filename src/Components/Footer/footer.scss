@@ -7,9 +7,10 @@
   &-top-content {
     @include flex(row, flex-start, space-between);
     padding: 3.2rem 0;
-    @include resp(flex-direction, column, column, row);
+    flex-wrap: wrap;
+
     .subscribe-block {
-      @include resp(width, 100%, 100%, 20%);
+      flex: none;
       display: flex;
       flex-direction: column;
       .subscribe-text {
@@ -48,65 +49,61 @@
         }
       }
     }
-    .footer-recent-posts {
-      @include resp(width, 100%, 100%, 20%);
-    }
     .footer-popular-posts {
-      @include resp(width, 100%, 100%, 25%);
+      min-width: 326px;
     }
-
-    .footer-posts-info {
-      & p {
-        margin: 1rem 0;
-        text-transform: uppercase;
-        color: $footerDate;
-        line-height: 1.7;
-        letter-spacing: 2px;
-        font-size: 0.75rem;
-        font-weight: 600;
-      }
-      .footer-posts-info-li {
-        margin-bottom: 0.65rem;
-        .footer-posts-info-link {
+    .footer-posts-info-wrapper {
+      justify-content: flex-start;
+      display: flex;
+      .footer-posts-info {
+        min-width: 262px;
+        & p {
+          margin: 1rem 0;
           text-transform: uppercase;
-          letter-spacing: 1px;
-          color: $white;
-          font-family: "Lustria";
-          font-weight: 600;
-          font-size: 0.7rem;
-          line-height: 1.2em;
-          transition: all 0.3s ease;
-          margin-bottom: 0.35rem;
-          &:hover {
-            color: $date;
-          }
-        }
-        .footer-posts-info-date {
-          font-family: "Lustria";
-          font-style: italic;
           color: $footerDate;
-          letter-spacing: 0;
-          opacity: 0.8;
+          line-height: 1.7;
+          letter-spacing: 2px;
           font-size: 0.75rem;
+          font-weight: 600;
+        }
+        .footer-posts-info-li {
+          margin-bottom: 0.65rem;
+          .footer-posts-info-link {
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: $white;
+            font-family: "Lustria";
+            font-weight: 600;
+            font-size: 0.7rem;
+            line-height: 1.2em;
+            transition: all 0.3s ease;
+            margin-bottom: 0.35rem;
+            &:hover {
+              color: $date;
+            }
+          }
+          .footer-posts-info-date {
+            font-family: "Lustria";
+            font-style: italic;
+            color: $footerDate;
+            letter-spacing: 0;
+            opacity: 0.8;
+            font-size: 0.75rem;
+          }
         }
       }
     }
   }
+
   .footer-bottom-wrapper {
     @include flex(row, center, center);
-    @include resp(padding, 0 1.5rem, 0 1.5rem, 0 3.75rem);
-
     max-width: 1425px;
     border-top: 1px solid #444;
     margin: 0 auto;
     .footer-bottom-content {
       @include flex(row, center, space-between);
       padding: 1.25rem 0;
-      @include resp(flex-wrap, wrap, wrap, wrap, nowrap);
       .copyright {
-        @include resp(width, 100%, 100%, 50%);
-        @include resp(margin-bottom, 1rem, 1rem, 0);
-
         color: $footerDate;
         font-size: 0.75rem;
         font-weight: 400;
@@ -131,5 +128,69 @@
         }
       }
     }
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-top-content {
+    flex-direction: column;
+  }
+  .footer-recent-posts {
+    width: 100%;
+  }
+  .footer-popular-posts {
+    width: 100%;
+  }
+  .subscribe-block {
+    width: 100%;
+  }
+  .footer-posts-info-wrapper {
+    flex-direction: column;
+  }
+  .footer-posts-info {
+    width: 100%;
+  }
+  .footer-bottom-wrapper {
+    padding: 0 1.5rem;
+  }
+  .copyright {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+}
+@media (min-width: 768px) {
+  .footer-posts-info-wrapper {
+    flex-direction: row;
+  }
+  .footer-posts-info {
+    width: 50%;
+  }
+  .footer-bottom-wrapper {
+    padding: 0 3.75rem;
+  }
+  .copyright {
+    width: 50%;
+    margin-bottom: 0;
+  }
+}
+@media (min-width: 1024px) {
+  .subscribe-block {
+    width: 20%;
+  }
+  .footer-posts-info-wrapper {
+    width: 50%;
+  }
+}
+@media (max-width: 1024px) {
+  .footer-posts-info-wrapper {
+    width: 100%;
+  }
+  .footer-bottom-content {
+    flex-wrap: wrap;
+  }
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  .subscribe-block {
+    width: 50%;
   }
 }

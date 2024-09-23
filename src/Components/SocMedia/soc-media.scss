@@ -1,0 +1,19 @@
+@import "../../styles/colors";
+.soc-icons-wrappper {
+  align-items: center;
+  .soc-icons-li {
+    margin-right: 0.75rem;
+    .soc-icons-link {
+      display: flex;
+      & svg {
+        fill: "#1A1A1A";
+        transition: all 0.3s ease;
+
+        &:hover,
+        &:active {
+          fill: $date;
+        }
+      }
+    }
+  }
+}

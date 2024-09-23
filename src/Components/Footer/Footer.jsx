@@ -7,7 +7,7 @@ const Footer = () => {
     <footer className="footer">
       <Section className={"footer-top"}>
         <Logo color={"white"} />
-        <form className="subscribe-block">
+        <form className="subscribe-block footer-posts-info">
           <label className={"subscribe-text"} htmlFor="subscribe">
             Subscription
           </label>
@@ -19,45 +19,53 @@ const Footer = () => {
           />
           <input className="subscribe-btn" type="submit" value={"Subscribe"} />
         </form>
-        <div className="footer-recent-posts footer-posts-info">
-          <p>Recent Posts</p>
-          <ul className="footer-posts-info-ul">
-            <li className="footer-posts-info-li">
-              <Link className={"footer-posts-info-link"}>Beauty of Nature</Link>
-              <div className="footer-posts-info-date">July 22, 2015</div>
-            </li>
-            <li className="footer-posts-info-li">
-              <Link className={"footer-posts-info-link"}>
-                Fashion Model Shoot
-              </Link>
-              <div className="footer-posts-info-date">July 22, 2015</div>
-            </li>
-            <li className="footer-posts-info-li">
-              <Link className={"footer-posts-info-link"}>Golden Snow Land</Link>
-              <div className="footer-posts-info-date">July 22, 2015</div>
-            </li>
-          </ul>
-        </div>
-        <div className="footer-popular-posts footer-posts-info">
-          <p>Popular Posts</p>
-          <ul className="footer-posts-info-ul">
-            <li className="footer-posts-info-li">
-              <Link className={"footer-posts-info-link"}>
-                Top 10 Ingredients
-              </Link>
-              <div className="footer-posts-info-date">July 22, 2015</div>
-            </li>
-            <li className="footer-posts-info-li">
-              <Link className={"footer-posts-info-link"}>
-                Family Comes First
-              </Link>
-              <div className="footer-posts-info-date">July 22, 2015</div>
-            </li>
-            <li className="footer-posts-info-li">
-              <Link className={"footer-posts-info-link"}>Golden Snow Land</Link>
-              <div className="footer-posts-info-date">July 22, 2015</div>
-            </li>
-          </ul>
+        <div className="footer-posts-info-wrapper">
+          <div className="footer-recent-posts footer-posts-info">
+            <p>Recent Posts</p>
+            <ul className="footer-posts-info-ul">
+              <li className="footer-posts-info-li">
+                <Link className={"footer-posts-info-link"}>
+                  Beauty of Nature
+                </Link>
+                <div className="footer-posts-info-date">July 22, 2015</div>
+              </li>
+              <li className="footer-posts-info-li">
+                <Link className={"footer-posts-info-link"}>
+                  Fashion Model Shoot
+                </Link>
+                <div className="footer-posts-info-date">July 22, 2015</div>
+              </li>
+              <li className="footer-posts-info-li">
+                <Link className={"footer-posts-info-link"}>
+                  Golden Snow Land
+                </Link>
+                <div className="footer-posts-info-date">July 22, 2015</div>
+              </li>
+            </ul>
+          </div>
+          <div className="footer-popular-posts footer-posts-info">
+            <p>Popular Posts</p>
+            <ul className="footer-posts-info-ul">
+              <li className="footer-posts-info-li">
+                <Link className={"footer-posts-info-link"}>
+                  Top 10 Ingredients
+                </Link>
+                <div className="footer-posts-info-date">July 22, 2015</div>
+              </li>
+              <li className="footer-posts-info-li">
+                <Link className={"footer-posts-info-link"}>
+                  Family Comes First
+                </Link>
+                <div className="footer-posts-info-date">July 22, 2015</div>
+              </li>
+              <li className="footer-posts-info-li">
+                <Link className={"footer-posts-info-link"}>
+                  Golden Snow Land
+                </Link>
+                <div className="footer-posts-info-date">July 22, 2015</div>
+              </li>
+            </ul>
+          </div>
         </div>
       </Section>
       <div className="footer-bottom-wrapper">

@@ -2,12 +2,28 @@
 
 .logo-link {
   display: flex;
-  @include resp(justify-content, flex-start, center);
-  .black-logo {
-    @include resp(width, 40%, 40%, 100%);
-  }
 }
 
 .white-logo {
   width: 9.5rem;
+}
+@media (max-width: 768px) {
+  .black-logo {
+    width: 40%;
+  }
+}
+@media (min-width: 768px) {
+  .black-logo {
+    width: 100%;
+  }
+}
+@media (max-width: 576px) {
+  .logo-link {
+    justify-content: flex-start;
+  }
+}
+@media (min-width: 576px) {
+  .logo-link {
+    justify-content: center;
+  }
 }

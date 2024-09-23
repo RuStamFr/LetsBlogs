@@ -1,0 +1,65 @@
+@import "../../styles/mixins";
+@import "../../styles/colors";
+
+.post-block {
+  @include flex(column, center, center);
+  margin-bottom: 1.25rem;
+  @include resp(width, 100%, 100%, 48%);
+
+  .post-img-link {
+    margin-bottom: 1.25rem;
+  }
+  .post-title-link {
+    color: $text;
+    font-size: 1.1rem;
+    font-family: "Lustria";
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  .post-date-border {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 10.25rem;
+    position: relative;
+    margin-bottom: 1.2rem;
+
+    &:before {
+      content: "";
+      border-bottom: 1px solid $date;
+      width: 100%;
+      position: absolute;
+      left: 0;
+      top: 50%;
+      z-index: 0;
+    }
+    .post-date {
+      display: inline-block;
+      background-color: $white;
+      padding: 0 1rem;
+      z-index: 2;
+      color: $date;
+      font-style: italic;
+      font-size: 0.8rem;
+    }
+  }
+  .post-desc {
+    color: $black;
+    font-size: 0.9rem;
+    text-align: left;
+    margin-bottom: 1rem;
+  }
+  .post-btn {
+    width: 100%;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: $date;
+    transition: all 0.3s ease;
+    &:hover,
+    &:active {
+      color: $text;
+    }
+  }
+}

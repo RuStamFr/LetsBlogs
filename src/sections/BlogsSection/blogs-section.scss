@@ -1,0 +1,240 @@
+@import "../../styles/mixins";
+@import "../../styles/colors";
+
+.blog-section {
+  &-content {
+    @include flex(row, flex-start, _);
+
+    width: 100%;
+  }
+  .blog-title {
+    font-family: "Lustria";
+    font-size: 1.25rem;
+    color: $text;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  .blog-date-border {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 12.1rem;
+    position: relative;
+    margin-bottom: 1.9rem;
+
+    &:before {
+      content: "";
+      border-bottom: 1px solid $date;
+      width: 100%;
+      position: absolute;
+      left: 0;
+      top: 50%;
+      z-index: 0;
+    }
+    .blog-date {
+      display: inline-block;
+      background-color: $white;
+      padding: 0 1rem;
+      z-index: 2;
+      color: $date;
+      font-style: italic;
+      font-size: 0.8rem;
+    }
+  }
+
+  .blog-left-block {
+    max-width: 47.32rem;
+    @include flex(column, center, flex-start);
+    margin-right: 5rem;
+    margin-bottom: 3.75rem;
+
+    .blog-img {
+      margin-bottom: 1.75rem;
+    }
+    .blog-desc {
+      color: $black;
+      margin-bottom: 1rem;
+    }
+    .more-btn {
+      width: 100%;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 1.9rem;
+      color: $date;
+      transition: all 0.3s ease;
+      &:hover,
+      &:active {
+        color: $text;
+      }
+    }
+    .categories-title-border {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      text-align: center;
+      position: relative;
+      z-index: 0;
+      margin-bottom: 2rem;
+      &:before {
+        content: "";
+        border-bottom: 1px solid $border;
+        width: 100%;
+        position: absolute;
+        left: 0;
+        top: 50%;
+        z-index: 0;
+      }
+      .categories-title {
+        display: inline-block;
+        position: static;
+        background-color: $white;
+        padding: 0 1.5rem;
+        z-index: 2;
+        letter-spacing: 2px;
+        color: $text;
+        font-size: 0.7rem;
+        line-height: 1.7;
+        text-transform: uppercase;
+      }
+    }
+    .posts-wrapper {
+      @include flex(row, flex-start, space-between);
+      flex-wrap: wrap;
+      @include resp(flex-direction, column, column, row);
+    }
+    .prev-btn {
+      width: 100%;
+      text-align: right;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-weight: 600;
+      color: $text;
+      &::after {
+        content: "";
+        display: inline-block;
+        background: no-repeat
+          url(../../assets/icons/double-arrow-right-icon.svg);
+        width: 0.5rem;
+        height: 0.5rem;
+        margin-left: 5px;
+      }
+    }
+  }
+  .blog-right-block {
+    max-width: 17.6rem;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: $text;
+    @include flex(column, center, center);
+    .about-block,
+    .widget-block {
+      @include flex(column, center, flex-start);
+      padding: 1.25rem;
+      border: 1px solid $border;
+      margin-bottom: 2.5rem;
+      &-title {
+        text-align: center;
+        text-transform: uppercase;
+
+        width: 100%;
+        font-size: 0.75rem;
+        margin-bottom: 1rem;
+      }
+      &-img {
+        margin-bottom: 1rem;
+      }
+      &-desc {
+        text-align: left;
+        color: #444;
+        font-size: 13px;
+        font-weight: 400;
+        line-height: 1.7;
+        margin-bottom: 1rem;
+      }
+      &-signature {
+        width: 7.5rem;
+      }
+    }
+
+    .subscribe-widget {
+      background-color: $text;
+      color: $white;
+      .subscribe-text {
+        width: 100%;
+        margin: 1rem 0;
+        font-size: 0.75rem;
+        font-weight: 600;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+      }
+      .subscribe-input {
+        width: 100%;
+        padding: 0.5rem 0.7rem;
+        height: 2.1rem;
+        text-align: center;
+        background: #fcfcfc;
+        border: 1px solid $border;
+        margin-bottom: 1rem;
+        &::placeholder {
+          font-family: "Lora";
+          font-style: italic;
+          font-size: 0.9rem;
+          font-weight: inherit;
+        }
+      }
+      .subscribe-btn {
+        width: 100%;
+        padding: 0.4rem 1rem;
+        text-transform: uppercase;
+        font-size: 11px;
+        font-weight: 600;
+        line-height: 1.5;
+        letter-spacing: 2px;
+        background-color: $grey;
+        color: $white;
+        transition: all 0.3s ease;
+        &:hover {
+          background-color: $text;
+        }
+      }
+    }
+  }
+  .social-block {
+    &-title {
+      margin-bottom: 0.8rem;
+      text-transform: uppercase;
+    }
+  }
+  .categories-block {
+    &-title {
+      text-transform: uppercase;
+
+      margin-bottom: 1.6rem;
+    }
+    &-list {
+      width: 100%;
+      .category {
+        text-align: left;
+        border-bottom: 1px solid $border;
+        margin-bottom: 5px;
+        padding-bottom: 0.7rem;
+
+        &-link {
+          font-size: 14px;
+          font-weight: 400;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .blog-section-content {
+    flex-direction: column;
+  }
+}

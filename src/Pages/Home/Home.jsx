@@ -1,10 +1,11 @@
 import Slider from "../../Components/Slider/Slider";
+import BlogsSection from "../../sections/BlogsSection/BlogsSection";
 import "./home.scss";
 const Home = () => {
   const items = [
     {
       id: 1,
-      src: "/public/slider/1.jpg",
+      src: "/public/slider/1-s.jpg",
     },
     {
       id: 2,
@@ -31,6 +32,7 @@ const Home = () => {
   return (
     <>
       <Slider items={items} />
+      <BlogsSection />
     </>
   );
 };

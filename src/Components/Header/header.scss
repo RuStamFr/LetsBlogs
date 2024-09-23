@@ -7,25 +7,7 @@
 
   &-content {
     @include flex(row, flex-start, space-between);
-    .soc-icons-wrappper {
-      @include resp(display, none, flex);
-      align-items: center;
-      .soc-icons-li {
-        margin-right: 0.75rem;
-        .soc-icons-link {
-          display: flex;
-          & svg {
-            fill: "#1A1A1A";
-            transition: all 0.3s ease;
 
-            &:hover,
-            &:active {
-              fill: $date;
-            }
-          }
-        }
-      }
-    }
     .header-top-right-menu {
       @include flex(row, center, center, auto);
 
@@ -48,7 +30,6 @@
 }
 .header-nav {
   @include flex(row, center, center);
-  @include resp(display, none, none, flex);
 
   &-link {
     padding: 1rem;
@@ -63,6 +44,26 @@
     &:active {
       color: $date;
     }
+  }
+}
+@media (max-width: 768px) {
+  .header-nav {
+    display: none;
+  }
+}
+@media (min-width: 768px) {
+  .header-nav {
+    display: flex;
+  }
+}
+@media (max-width: 576px) {
+  .soc-icons-wrappper {
+    display: none;
+  }
+}
+@media (min-width: 576px) {
+  .soc-icons-wrappper {
+    display: flex;
   }
 }
 @media (min-width: 1024px) {
